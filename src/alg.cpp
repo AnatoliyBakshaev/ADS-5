@@ -78,6 +78,7 @@ std::string infx2pstfx(std::string inf) {
             outputstr += stack1.pop();
         outputstr += ' ';
     }
+    outputstr.pop_back();
     return outputstr;
 }
 
