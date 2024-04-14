@@ -7,7 +7,7 @@ TStack<int, 100> stack2;
 
 std::string infx2pstfx(std::string inf) {
     std::string outputstr = "";
-    for (char i: inf) {
+    for (char i : inf) {
         if (i >= '0' && i <= '9') {
             outputstr += i;
             outputstr += ' ';
