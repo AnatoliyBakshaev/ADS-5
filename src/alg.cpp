@@ -12,10 +12,9 @@ std::string infx2pstfx(std::string inf) {
             outputstr += i;
             outputstr += ' ';
         } else {
-            if (stack1.isEmpty()){
+            if (stack1.isEmpty()) {
                 stack1.push(i);
-            }
-            else if (i == '(') {
+            } else if (i == '(') {
                 stack1.push(i);
             } else if (i == ')') {
                 while (stack1.get() != '(' && !stack1.isEmpty()) {
@@ -49,7 +48,7 @@ std::string infx2pstfx(std::string inf) {
                         }
                     }
                     stack1.push(i);
-                } else if (stack1.isEmpty()){
+                } else if (stack1.isEmpty()) {
                     stack1.push(i);
                 }
             } else if (i == '/' || i == '*') {
@@ -67,7 +66,7 @@ std::string infx2pstfx(std::string inf) {
                         }
                     }
                     stack1.push(i);
-                } else if (stack1.isEmpty()){
+                } else if (stack1.isEmpty()) {
                     stack1.push(i);
                 }
             }
@@ -90,13 +89,13 @@ int eval(std::string post) {
         char c = post[i];
         if (c >= '0' && c <= '9') {
             std::string number;
-            while (i < post.size() && (post[i] >= '0' && post[i] <= '9')){
+            while (i < post.size() && (post[i] >= '0' && post[i] <= '9')) {
                 number += post[i];
                 ++i;
             }
-            stack2.push(std::stoi(number)); // Преобразуем строку в число и помещаем в стек
+            stack2.push(std::stoi(number));
             --i;
-        }else if (c != ' ') {
+        } else if (c != ' ') {
             int op2 = stack2.pop();
             int op = stack2.pop();
             switch (c) {
